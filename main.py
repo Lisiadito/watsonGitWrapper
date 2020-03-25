@@ -93,7 +93,7 @@ def runWatson(withTag):
     first_start = False
 
     while True:
-        if isBranchChanged() == True:
+        if isBranchChanged() and withTag:
             if withTag:
                 subprocess.run(['watson start {project} +{branch}'.format(
                     project=project, branch=initial_branch)], shell=True)
